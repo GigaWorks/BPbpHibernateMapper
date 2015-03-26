@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 26-Mar-2015 03:57:16 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="stuba.bpbphibernatemapper.GtfsTrips" table="gtfs_trips" catalog="`BA-DPB`">
+        <composite-id name="id" class="stuba.bpbphibernatemapper.GtfsTripsId">
+            <key-property name="agencyId" type="string">
+                <column name="agencyId" length="50" />
+            </key-property>
+            <key-property name="id" type="string">
+                <column name="id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="gtfsRoutes" class="stuba.bpbphibernatemapper.GtfsRoutes" fetch="select">
+            <column name="route_agencyId" length="50" />
+            <column name="route_id" />
+        </many-to-one>
+        <property name="serviceIdAgencyId" type="string">
+            <column name="serviceId_agencyId" length="50" />
+        </property>
+        <property name="serviceIdId" type="string">
+            <column name="serviceId_id" />
+        </property>
+        <property name="shapeIdAgencyId" type="string">
+            <column name="shapeId_agencyId" length="50" />
+        </property>
+        <property name="shapeIdId" type="string">
+            <column name="shapeId_id" />
+        </property>
+        <property name="tripShortName" type="string">
+            <column name="tripShortName" />
+        </property>
+        <property name="tripHeadsign" type="string">
+            <column name="tripHeadsign" />
+        </property>
+        <property name="routeShortName" type="string">
+            <column name="routeShortName" />
+        </property>
+        <property name="directionId" type="string">
+            <column name="directionId" />
+        </property>
+        <property name="blockId" type="string">
+            <column name="blockId" />
+        </property>
+        <property name="wheelchairAccessible" type="java.lang.Integer">
+            <column name="wheelchairAccessible" />
+        </property>
+        <set name="tripPositionses" table="trip_positions" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="gtfs_trip_id" length="50" not-null="true" />
+                <column name="gtfs_trip_aqencyId" not-null="true" />
+            </key>
+            <one-to-many class="stuba.bpbphibernatemapper.TripPositions" />
+        </set>
+        <set name="gtfsStopTimeses" table="gtfs_stop_times" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="trip_agencyId" length="50" />
+                <column name="trip_id" />
+            </key>
+            <one-to-many class="stuba.bpbphibernatemapper.GtfsStopTimes" />
+        </set>
+    </class>
+</hibernate-mapping>

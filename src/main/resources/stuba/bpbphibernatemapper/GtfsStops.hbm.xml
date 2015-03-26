@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 26-Mar-2015 03:57:16 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="stuba.bpbphibernatemapper.GtfsStops" table="gtfs_stops" catalog="`BA-DPB`">
+        <composite-id name="id" class="stuba.bpbphibernatemapper.GtfsStopsId">
+            <key-property name="agencyId" type="string">
+                <column name="agencyId" length="50" />
+            </key-property>
+            <key-property name="id" type="string">
+                <column name="id" />
+            </key-property>
+        </composite-id>
+        <property name="code" type="string">
+            <column name="code" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" />
+        </property>
+        <property name="direction" type="string">
+            <column name="direction" />
+        </property>
+        <property name="lat" type="java.lang.Double">
+            <column name="lat" precision="22" scale="0" />
+        </property>
+        <property name="lon" type="java.lang.Double">
+            <column name="lon" precision="22" scale="0" />
+        </property>
+        <property name="zoneId" type="string">
+            <column name="zoneId" />
+        </property>
+        <property name="url" type="string">
+            <column name="url" />
+        </property>
+        <property name="locationType" type="java.lang.Integer">
+            <column name="locationType" />
+        </property>
+        <property name="parentStation" type="string">
+            <column name="parentStation" />
+        </property>
+        <property name="timezone" type="string">
+            <column name="timezone" />
+        </property>
+        <property name="vehicleType" type="java.lang.Integer">
+            <column name="vehicleType" />
+        </property>
+        <property name="wheelchairBoarding" type="java.lang.Integer">
+            <column name="wheelchairBoarding" />
+        </property>
+        <property name="platformCode" type="string">
+            <column name="platformCode" />
+        </property>
+        <set name="gtfsStopTimeses" table="gtfs_stop_times" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="stop_agencyId" length="50" />
+                <column name="stop_id" />
+            </key>
+            <one-to-many class="stuba.bpbphibernatemapper.GtfsStopTimes" />
+        </set>
+    </class>
+</hibernate-mapping>

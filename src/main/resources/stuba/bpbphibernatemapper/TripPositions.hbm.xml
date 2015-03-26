@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 26-Mar-2015 03:57:16 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="stuba.bpbphibernatemapper.TripPositions" table="trip_positions" catalog="`BA-DPB`">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="gtfsTrips" class="stuba.bpbphibernatemapper.GtfsTrips" fetch="select">
+            <column name="gtfs_trip_id" length="50" not-null="true" />
+            <column name="gtfs_trip_aqencyId" not-null="true" />
+        </many-to-one>
+        <property name="lat" type="float">
+            <column name="lat" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="lon" type="float">
+            <column name="lon" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="delay" type="int">
+            <column name="delay" not-null="true" />
+        </property>
+        <property name="speed" type="float">
+            <column name="speed" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="accuracy" type="float">
+            <column name="accuracy" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="createdAt" type="timestamp">
+            <column name="created_at" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

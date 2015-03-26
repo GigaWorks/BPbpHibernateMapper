@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3333/BA-DPB?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">BPbp</property>
+    <mapping resource="stuba/bpbphibernatemapper/Poi.hbm.xml"/>
+    <mapping resource="stuba/bpbphibernatemapper/GtfsAgencies.hbm.xml"/>
+    <mapping resource="stuba/bpbphibernatemapper/GtfsTrips.hbm.xml"/>
+    <mapping resource="stuba/bpbphibernatemapper/PoisInRoutes.hbm.xml"/>
+    <mapping resource="stuba/bpbphibernatemapper/GtfsCalendars.hbm.xml"/>
+    <mapping resource="stuba/bpbphibernatemapper/GtfsStops.hbm.xml"/>
+    <mapping resource="stuba/bpbphibernatemapper/GtfsRoutes.hbm.xml"/>
+    <mapping resource="stuba/bpbphibernatemapper/GtfsStopTimes.hbm.xml"/>
+    <mapping resource="stuba/bpbphibernatemapper/TripPositions.hbm.xml"/>
+    <mapping resource="stuba/bpbphibernatemapper/GtfsCalendarDates.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

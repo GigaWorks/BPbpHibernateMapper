@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 26-Mar-2015 03:57:16 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="stuba.bpbphibernatemapper.PoisInRoutes" table="pois_in_routes" catalog="`BA-DPB`">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="poi" class="stuba.bpbphibernatemapper.Poi" fetch="select">
+            <column name="poi_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="gtfsRoutes" class="stuba.bpbphibernatemapper.GtfsRoutes" fetch="select">
+            <column name="route_id" length="50" not-null="true" />
+            <column name="route_agencyId" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
