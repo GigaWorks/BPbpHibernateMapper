@@ -28,7 +28,7 @@
             <column name="accuracy" precision="12" scale="0" not-null="true" />
         </property>
         <property name="createdAt" type="timestamp">
-            <column name="created_at" length="19" not-null="true" />
+            <column name="created_at" length="19"/>
         </property>
     </class>
 </hibernate-mapping>
