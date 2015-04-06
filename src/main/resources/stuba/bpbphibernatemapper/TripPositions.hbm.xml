@@ -12,19 +12,19 @@
             <column name="gtfs_trip_id" length="50" not-null="true" />
             <column name="gtfs_trip_aqencyId" not-null="true" />
         </many-to-one>
-        <property name="lat" type="float">
+        <property name="lat" type="double">
             <column name="lat" precision="12" scale="0" not-null="true" />
         </property>
-        <property name="lon" type="float">
+        <property name="lon" type="double">
             <column name="lon" precision="12" scale="0" not-null="true" />
         </property>
         <property name="delay" type="int">
             <column name="delay" not-null="true" />
         </property>
-        <property name="speed" type="float">
+        <property name="speed" type="double">
             <column name="speed" precision="12" scale="0" not-null="true" />
         </property>
-        <property name="accuracy" type="float">
+        <property name="accuracy" type="double">
             <column name="accuracy" precision="12" scale="0" not-null="true" />
         </property>
         <property name="createdAt" type="timestamp">

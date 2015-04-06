@@ -12,17 +12,17 @@ public class TripPositions  implements java.io.Serializable {
 
      private Long id;
      private GtfsTrips gtfsTrips;
-     private float lat;
-     private float lon;
+     private double lat;
+     private double lon;
      private int delay;
-     private float speed;
-     private float accuracy;
+     private double speed;
+     private double accuracy;
      private Date createdAt;
 
     public TripPositions() {
     }
     
-    public TripPositions(GtfsTrips gtfsTrips, float lat, float lon, int delay, float speed, float accuracy) {
+    public TripPositions(GtfsTrips gtfsTrips, double lat, double lon, int delay, double speed, double accuracy) {
        this.gtfsTrips = gtfsTrips;
        this.lat = lat;
        this.lon = lon;
@@ -31,7 +31,7 @@ public class TripPositions  implements java.io.Serializable {
        this.accuracy = accuracy;
     }
 
-    public TripPositions(GtfsTrips gtfsTrips, float lat, float lon, int delay, float speed, float accuracy, Date createdAt) {
+    public TripPositions(GtfsTrips gtfsTrips, double lat, double lon, int delay, double speed, double accuracy, Date createdAt) {
        this.gtfsTrips = gtfsTrips;
        this.lat = lat;
        this.lon = lon;
@@ -55,18 +55,18 @@ public class TripPositions  implements java.io.Serializable {
     public void setGtfsTrips(GtfsTrips gtfsTrips) {
         this.gtfsTrips = gtfsTrips;
     }
-    public float getLat() {
+    public double getLat() {
         return this.lat;
     }
     
-    public void setLat(float lat) {
+    public void setLat(double lat) {
         this.lat = lat;
     }
-    public float getLon() {
+    public double getLon() {
         return this.lon;
     }
     
-    public void setLon(float lon) {
+    public void setLon(double lon) {
         this.lon = lon;
     }
     public int getDelay() {
@@ -76,18 +76,18 @@ public class TripPositions  implements java.io.Serializable {
     public void setDelay(int delay) {
         this.delay = delay;
     }
-    public float getSpeed() {
+    public double getSpeed() {
         return this.speed;
     }
     
-    public void setSpeed(float speed) {
+    public void setSpeed(double speed) {
         this.speed = speed;
     }
-    public float getAccuracy() {
+    public double getAccuracy() {
         return this.accuracy;
     }
     
-    public void setAccuracy(float accuracy) {
+    public void setAccuracy(double accuracy) {
         this.accuracy = accuracy;
     }
     public Date getCreatedAt() {

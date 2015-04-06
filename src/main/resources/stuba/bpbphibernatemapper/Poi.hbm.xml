@@ -8,13 +8,13 @@
             <column name="id" />
             <generator class="identity" />
         </id>
-        <property name="lat" type="float">
+        <property name="lat" type="double">
             <column name="lat" precision="12" scale="0" not-null="true" />
         </property>
-        <property name="lon" type="float">
+        <property name="lon" type="double">
             <column name="lon" precision="12" scale="0" not-null="true" />
         </property>
-        <property name="radius" type="float">
+        <property name="radius" type="double">
             <column name="radius" precision="12" scale="0" not-null="true" />
         </property>
         <property name="title" type="string">

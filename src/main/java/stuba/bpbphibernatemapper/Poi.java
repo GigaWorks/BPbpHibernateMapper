@@ -13,9 +13,9 @@ public class Poi  implements java.io.Serializable {
 
 
      private Long id;
-     private float lat;
-     private float lon;
-     private float radius;
+     private double lat;
+     private double lon;
+     private double radius;
      private String title;
      private String filePath;
      private Date createdAt;
@@ -25,14 +25,14 @@ public class Poi  implements java.io.Serializable {
     }
 
 	
-    public Poi(float lat, float lon, float radius, String title, String filePath) {
+    public Poi(double lat, double lon, double radius, String title, String filePath) {
         this.lat = lat;
         this.lon = lon;
         this.radius = radius;
         this.title = title;
         this.filePath = filePath;
     }
-    public Poi(float lat, float lon, float radius, String title, String filePath, Date createdAt, Set poisInRouteses) {
+    public Poi(double lat, double lon, double radius, String title, String filePath, Date createdAt, Set poisInRouteses) {
        this.lat = lat;
        this.lon = lon;
        this.radius = radius;
@@ -49,25 +49,25 @@ public class Poi  implements java.io.Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-    public float getLat() {
+    public double getLat() {
         return this.lat;
     }
     
-    public void setLat(float lat) {
+    public void setLat(double lat) {
         this.lat = lat;
     }
-    public float getLon() {
+    public double getLon() {
         return this.lon;
     }
     
-    public void setLon(float lon) {
+    public void setLon(double lon) {
         this.lon = lon;
     }
-    public float getRadius() {
+    public double getRadius() {
         return this.radius;
     }
     
-    public void setRadius(float radius) {
+    public void setRadius(double radius) {
         this.radius = radius;
     }
     public String getTitle() {
